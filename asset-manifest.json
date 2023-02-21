@@ -1,21 +1,22 @@
 {
   "files": {
-    "main.css": "/static/css/main.1a8f02f4.css",
-    "main.js": "/static/js/main.d0b28618.js",
+    "main.css": "/static/css/main.614f8db8.css",
+    "main.js": "/static/js/main.3607d514.js",
+    "static/media/movie.PNG": "/static/media/movie.5ebfa6d5048a156e8f6d.PNG",
     "static/media/portfolio.PNG": "/static/media/portfolio.f250bd3582c785fa4ddb.PNG",
     "static/media/foodmagic.PNG": "/static/media/foodmagic.374e79db2dc754b2ecad.PNG",
-    "static/media/ME-remove.png": "/static/media/ME-remove.5f7de758e878825022fe.png",
+    "static/media/ME.jpg": "/static/media/ME.5478ef0c50e4b53ca225.jpg",
     "static/media/returnordermana.png": "/static/media/returnordermana.15683610148c4530e9be.png",
     "static/media/Resume.pdf": "/static/media/Resume.9d431dfa4ee7ca3a483e.pdf",
     "static/media/ME1-remove.png": "/static/media/ME1-remove.66236adab4ce78c56b90.png",
     "static/media/IMG1.PNG": "/static/media/IMG1.1150e977dd83529cf319.PNG",
     "static/media/customer.png": "/static/media/customer.14fe058c162e34da431e.png",
     "index.html": "/index.html",
-    "main.1a8f02f4.css.map": "/static/css/main.1a8f02f4.css.map",
-    "main.d0b28618.js.map": "/static/js/main.d0b28618.js.map"
+    "main.614f8db8.css.map": "/static/css/main.614f8db8.css.map",
+    "main.3607d514.js.map": "/static/js/main.3607d514.js.map"
   },
   "entrypoints": [
-    "static/css/main.1a8f02f4.css",
-    "static/js/main.d0b28618.js"
+    "static/css/main.614f8db8.css",
+    "static/js/main.3607d514.js"
   ]
 }
