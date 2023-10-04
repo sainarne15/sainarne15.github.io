@@ -1,23 +1,23 @@
 {
   "files": {
-    "main.css": "/static/css/main.b9429629.css",
-    "main.js": "/static/js/main.91ae160e.js",
+    "main.css": "/static/css/main.0545f398.css",
+    "main.js": "/static/js/main.213f677a.js",
     "static/media/movie.PNG": "/static/media/movie.5ebfa6d5048a156e8f6d.PNG",
     "static/media/portfolio.PNG": "/static/media/portfolio.f250bd3582c785fa4ddb.PNG",
+    "static/media/Resume.pdf": "/static/media/Resume.d7a9a92ef5ed18df1b63.pdf",
     "static/media/foodmagic.PNG": "/static/media/foodmagic.374e79db2dc754b2ecad.PNG",
     "static/media/ME.jpg": "/static/media/ME.5478ef0c50e4b53ca225.jpg",
     "static/media/returnordermana.png": "/static/media/returnordermana.15683610148c4530e9be.png",
-    "static/media/Resume.pdf": "/static/media/Resume.9d431dfa4ee7ca3a483e.pdf",
     "static/media/IMG1.PNG": "/static/media/IMG1.1150e977dd83529cf319.PNG",
     "static/media/aws.png": "/static/media/aws.ff89376524595f1e4e24.png",
     "static/media/customer.png": "/static/media/customer.14fe058c162e34da431e.png",
     "static/media/az900.png": "/static/media/az900.dba04b2e0f2485194afb.png",
     "index.html": "/index.html",
-    "main.b9429629.css.map": "/static/css/main.b9429629.css.map",
-    "main.91ae160e.js.map": "/static/js/main.91ae160e.js.map"
+    "main.0545f398.css.map": "/static/css/main.0545f398.css.map",
+    "main.213f677a.js.map": "/static/js/main.213f677a.js.map"
   },
   "entrypoints": [
-    "static/css/main.b9429629.css",
-    "static/js/main.91ae160e.js"
+    "static/css/main.0545f398.css",
+    "static/js/main.213f677a.js"
   ]
 }
