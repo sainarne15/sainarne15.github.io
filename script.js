@@ -264,8 +264,8 @@ class Node {
     this.y = Math.random() * H;
     this.vx = (Math.random() - 0.5) * 0.18;
     this.vy = (Math.random() - 0.5) * 0.18;
-    this.r = Math.random() * 1.2 + 0.4;
-    this.o = Math.random() * 0.25 + 0.05;
+    this.r = Math.random() * 1.5 + 0.5;
+    this.o = Math.random() * 0.45 + 0.15;
     this.isAmber = Math.random() > 0.88;
     // Pulse phase for breathing effect
     this.phase = Math.random() * Math.PI * 2;
@@ -289,7 +289,7 @@ class Node {
 
 function initNodes() {
   const area = W * H;
-  const count = motionOK ? Math.min(Math.floor(area / 18000), 60) : 0;
+  const count = motionOK ? Math.min(Math.floor(area / 11000), 90) : 0;
   nodes = Array.from({ length: count }, () => new Node());
 }
 
@@ -319,18 +319,18 @@ function drawFrame() {
   for (const n of nodes) { n.update(); n.draw(); }
 
   // Connections
-  const maxDist = 100;
+  const maxDist = 130;
   for (let i = 0; i < nodes.length; i++) {
     for (let j = i + 1; j < nodes.length; j++) {
       const dx = nodes[i].x - nodes[j].x, dy = nodes[i].y - nodes[j].y;
       const dist = Math.sqrt(dx * dx + dy * dy);
       if (dist < maxDist) {
-        const opacity = (1 - dist / maxDist) * 0.06;
+        const opacity = (1 - dist / maxDist) * 0.13;
         ctx.beginPath();
         ctx.moveTo(nodes[i].x, nodes[i].y);
         ctx.lineTo(nodes[j].x, nodes[j].y);
         ctx.strokeStyle = `rgba(0,240,255,${opacity})`;
-        ctx.lineWidth = 0.4;
+        ctx.lineWidth = 0.5;
         ctx.stroke();
       }
     }
@@ -341,13 +341,13 @@ function drawFrame() {
     for (const n of nodes) {
       const dx = n.x - nmx, dy = n.y - nmy;
       const dist = Math.sqrt(dx * dx + dy * dy);
-      if (dist < 130) {
-        const opacity = (1 - dist / 130) * 0.15;
+      if (dist < 180) {
+        const opacity = (1 - dist / 180) * 0.55;
         ctx.beginPath();
         ctx.moveTo(n.x, n.y);
         ctx.lineTo(nmx, nmy);
         ctx.strokeStyle = `rgba(0,240,255,${opacity})`;
-        ctx.lineWidth = 0.6;
+        ctx.lineWidth = 1.0;
         ctx.stroke();
       }
     }
