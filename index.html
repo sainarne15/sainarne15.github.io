@@ -224,10 +224,12 @@
               <span class="tl-client-date">Feb 2024 — Jul 2024</span>
             </div>
             <ul class="tl-list">
-              <li>Configured Service Bus, SQL Managed Instance failover groups</li>
-              <li>Built Azure Monitor Workbooks & KQL queries for WAF log analysis</li>
-              <li>Integrated Trivy container scanning into ACR deployment pipeline</li>
-              <li>Managed AKS cluster upgrades across multiple environments</li>
+              <li>Spearheaded DevSecOps initiative: integrated Trivy CVE scanning across container images, Terraform (IaC), and Kubernetes manifests; published HTML vulnerability reports to Azure Blob static sites</li>
+              <li>Built Terraform feature-flag toggle for new project onboarding — infrastructure provisioned only when switch is enabled, enabling safe incremental rollouts</li>
+              <li>Implemented custom WAF geo-fencing rules in Terraform and wrote KQL queries in Azure Monitor to detect and block suspicious geographic traffic across multiple applications</li>
+              <li>Automated SQL MI failover with dynamic Read-Write Listener endpoint scripts; validated multi-region (VA ↔ TX) failover across DSB, PP, and PRD environments</li>
+              <li>Designed Azure resource locking strategy (CanNotDelete + ReadOnly) across AKS, Key Vaults, App Insights, and Service Bus; built dedicated deploy/destroy pipelines</li>
+              <li>Managed AKS cluster upgrades across PP2, QA1, and DSB dual-region environments; debugged App Gateway health probe issues (301/404) and resolved ReplicaSet retention</li>
             </ul>
             <div class="tl-client">
               <span class="tl-client-label">Internal</span>
