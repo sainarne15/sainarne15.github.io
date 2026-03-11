@@ -784,7 +784,8 @@ ul { list-style: none; }
 /* ═══ RESPONSIVE ═══ */
 @media (max-width: 1024px) {
   .hero-inner { grid-template-columns: 1fr; }
-  .hero-visual { display: none; }
+  .hero-visual { margin-top: 1.5rem; }
+  .term-body { min-height: 220px; max-height: 220px; }
 }
 @media (max-width: 900px) {
   .about-grid { grid-template-columns: 1fr; gap: 2rem; }

@@ -89,6 +89,7 @@ const actions = [
   { l: 'GitHub', d: 'sainarne15', u: 'https://github.com/sainarne15' },
   { l: 'LinkedIn', d: 'sainarne15', u: 'https://www.linkedin.com/in/sainarne15/' },
   { l: 'Autonomy', d: 'Flagship project', u: 'https://github.com/sainarne15/Autonomy' },
+  { l: 'GCP Data Engineer Cert', d: 'Google Cloud Professional', s: '#skills' },
   { l: 'Azure Cert', d: 'AZ-900 Credly', u: 'https://www.credly.com/badges/e8250dd8-4cc4-42b9-9451-d4c745042ac2/public_url' },
   { l: 'Terraform Cert', d: 'HashiCorp Credly', u: 'https://www.credly.com/badges/2d62f778-fa89-4026-a79b-e935c9426c2e/public_url' },
   { l: 'AWS Cert', d: 'Cloud Practitioner', u: 'https://www.credly.com/badges/510e837c-4f62-4c90-920c-8642f38e2be3/public_url' },
@@ -463,27 +464,31 @@ function startTerminal() {
       { t: 'amber', v: '> cat about.txt' },
       { t: 'output', v: '' },
       { t: 'output', v: '  Sai Narne' },
-      { t: 'output', v: '  Software Engineer | MS CS, University of Houston' },
+      { t: 'output', v: '  Cloud Data Engineer @ Verizon' },
+      { t: 'output', v: '  MS CS, University of Houston (3.7 GPA)' },
       { t: 'output', v: '' },
-      { t: 'output', v: '  I build systems at the intersection of AI, cloud,' },
-      { t: 'output', v: '  and full-stack development. I believe the best' },
-      { t: 'output', v: '  software is built by systems that think in layers.' },
+      { t: 'output', v: '  3+ years building data pipelines, cloud infra,' },
+      { t: 'output', v: '  and AI systems across GCP, Azure, and AWS.' },
+      { t: 'output', v: '  Currently migrating enterprise data at scale.' },
     ],
     skills: () => [
       { t: 'amber', v: '> ls ~/skills/' },
       { t: 'output', v: '' },
-      { t: 'success', v: '  Languages   Python, Java, C#, C++, JavaScript, R' },
-      { t: 'success', v: '  Web         React, TypeScript, ASP.NET Core, FastAPI' },
-      { t: 'success', v: '  Cloud       AWS, Azure, GCP, Terraform, Docker' },
-      { t: 'success', v: '  AI/ML       LangGraph, LiteLLM, NLP, Neural Networks' },
-      { t: 'success', v: '  Data        BigQuery, SQL, Airflow, Firestore' },
+      { t: 'success', v: '  Languages   Python, Java, C#, Scala, SQL, Bash' },
+      { t: 'success', v: '  Big Data    Spark, Kafka, Airflow, Hadoop, Beam' },
+      { t: 'success', v: '  Cloud       GCP, Azure, AWS, Terraform, Docker, K8s' },
+      { t: 'success', v: '  AI/ML       LangGraph, TensorFlow, PyTorch, Vertex AI' },
+      { t: 'success', v: '  Databases   BigQuery, Teradata, Oracle, PostgreSQL' },
+      { t: 'success', v: '  Viz         Tableau, Looker, Qlik' },
     ],
     experience: () => [
       { t: 'amber', v: '> git log --oneline career' },
       { t: 'output', v: '' },
-      { t: 'success', v: '  2023  Teaching Assistant — University of Houston' },
-      { t: 'success', v: '  2022  Research Assistant — University of Houston' },
-      { t: 'success', v: '  2021  Programmer Analyst Trainee — Cognizant' },
+      { t: 'success', v: '  NOW   Cloud Data Engineer — Verizon' },
+      { t: 'success', v: '  2024  Cloud Engineer — NY State IT Services' },
+      { t: 'success', v: '  2023  Software Engineer — Hiteck Solutions' },
+      { t: 'success', v: '  2022  Research & Teaching Asst — Univ. of Houston' },
+      { t: 'success', v: '  2021  Programmer Analyst — Cognizant' },
       { t: 'success', v: '  2020  ML Intern — Cognibot' },
     ],
     projects: () => [
@@ -507,9 +512,10 @@ function startTerminal() {
     certs: () => [
       { t: 'amber', v: '> cat ~/certifications.json' },
       { t: 'output', v: '' },
-      { t: 'success', v: '  [1] Azure Fundamentals (AZ-900)' },
-      { t: 'success', v: '  [2] Terraform Associate (HashiCorp)' },
-      { t: 'success', v: '  [3] AWS Cloud Practitioner' },
+      { t: 'success', v: '  [1] GCP Professional Data Engineer (Google Cloud)' },
+      { t: 'success', v: '  [2] Azure Fundamentals (AZ-900)' },
+      { t: 'success', v: '  [3] Terraform Associate 003 (HashiCorp)' },
+      { t: 'success', v: '  [4] AWS Cloud Practitioner' },
     ],
     autonomy: () => [
       { t: 'amber', v: '> autonomy --info' },
@@ -528,6 +534,28 @@ function startTerminal() {
     uptime: () => [{ t: 'success', v: '  ' + Math.floor(performance.now() / 1000) + 's since page load' }],
     echo: (args) => [{ t: 'output', v: '  ' + args }],
     sudo: () => [{ t: 'amber', v: '  Nice try. Access denied.' }],
+    matrix: () => { matrixMode(); return [{ t: 'success', v: '  Wake up, Neo...' }]; },
+    flip: () => { flipMode(); return [{ t: 'success', v: '  (╯°□°)╯︵ ┻━┻' }]; },
+    disco: () => { discoMode(); return [{ t: 'success', v: '  🪩' }]; },
+    party: () => { partyMode(); return [{ t: 'success', v: '  Let\'s go!' }]; },
+    hack: () => { hackMode(); return [{ t: 'success', v: '  Access granted.' }]; },
+    reset: () => { resetTheme(); return [{ t: 'success', v: '  Theme restored.' }]; },
+    rm: () => [{ t: 'amber', v: '  Permission denied. Nice try though.' }],
+    exit: () => [
+      { t: 'output', v: '' },
+      { t: 'amber', v: '  Where would you even go?' },
+      { t: 'output', v: '  This is my world. You\'re stuck here.' },
+      { t: 'output', v: '' },
+    ],
+    ls: () => [
+      { t: 'amber', v: '> ls ~/' },
+      { t: 'success', v: '  about.txt  skills/  projects/  certs.json  .contact  .secrets/' },
+    ],
+    cat: (args) => {
+      if (args.includes('.secrets')) return [{ t: 'amber', v: '  Permission denied. Some things stay hidden.' }];
+      return [{ t: 'amber', v: `  cat: ${args || '???'}: try a specific command instead` }];
+    },
+    cd: () => [{ t: 'output', v: '  You\'re already where you need to be.' }],
     neofetch: () => [
       { t: 'output', v: '' },
       { t: 'cyan', v: '   ███████╗ ███╗   ██╗' },
@@ -544,7 +572,9 @@ function startTerminal() {
     const trimmed = raw.trim().toLowerCase();
     const parts = trimmed.split(/\s+/);
     const cmd = parts[0];
-    const args = raw.trim().slice(cmd.length).trim();
+    const args = raw.trim().substring(cmd.length).trim();
+
+    console.log('[TERM DEBUG] cmd:', JSON.stringify(cmd), 'keys:', Object.keys(shellCmds), 'match:', cmd in shellCmds);
 
     if (!cmd) return [];
     if (cmd === 'clear') return 'CLEAR';
@@ -563,7 +593,7 @@ function startTerminal() {
       ];
     }
 
-    if (shellCmds[cmd]) return shellCmds[cmd](args);
+    if (cmd in shellCmds) return shellCmds[cmd](args);
     return [{ t: 'amber', v: `  command not found: ${cmd}. Try "help"` }];
   }
 
@@ -624,6 +654,8 @@ const secretCmds = [
   { l: 'Matrix', d: 'Take the red pill', secret: true },
   { l: 'Party', d: 'Time to celebrate', secret: true },
   { l: 'Hack', d: 'Access granted', secret: true },
+  { l: 'Flip', d: '(╯°□°)╯︵ ┻━┻', secret: true },
+  { l: 'Disco', d: 'Lights out', secret: true },
   { l: 'Reset', d: 'Back to normal', secret: true },
 ];
 
@@ -646,6 +678,8 @@ execCmd = function(a) {
     if (a.l === 'Matrix') matrixMode();
     else if (a.l === 'Party') partyMode();
     else if (a.l === 'Hack') hackMode();
+    else if (a.l === 'Flip') flipMode();
+    else if (a.l === 'Disco') discoMode();
     else if (a.l === 'Reset') resetTheme();
     return;
   }
@@ -655,7 +689,7 @@ execCmd = function(a) {
 function matrixMode() {
   const mc = document.createElement('canvas');
   mc.id = 'matrix-rain';
-  mc.style.cssText = 'position:fixed;inset:0;z-index:9998;pointer-events:none;opacity:0;transition:opacity 1s';
+  mc.style.cssText = 'position:fixed;inset:0;z-index:999;pointer-events:none;opacity:0;transition:opacity 1s';
   document.body.appendChild(mc);
   requestAnimationFrame(() => mc.style.opacity = '0.7');
 
@@ -690,7 +724,7 @@ function partyMode() {
     const c = colors[pi % colors.length];
     document.documentElement.style.setProperty('--cyan', c);
     const hex = c.replace('#','');
-    const r = parseInt(hex.substr(0,2),16), g = parseInt(hex.substr(2,2),16), b = parseInt(hex.substr(4,2),16);
+    const r = parseInt(hex.slice(0,2),16), g = parseInt(hex.slice(2,4),16), b = parseInt(hex.slice(4,6),16);
     document.documentElement.style.setProperty('--cyan-rgb', `${r},${g},${b}`);
     pi++;
   }, 200);
@@ -709,6 +743,39 @@ function hackMode() {
   document.body.style.fontFamily = '"Courier New", monospace';
 
   setTimeout(resetTheme, 8000);
+}
+
+function flipMode() {
+  document.body.style.transition = 'transform 1s var(--ease)';
+  document.body.style.transform = 'rotate(180deg)';
+  setTimeout(() => {
+    document.body.style.transform = '';
+    setTimeout(() => { document.body.style.transition = ''; }, 1000);
+  }, 3000);
+}
+
+function discoMode() {
+  const overlay = document.createElement('div');
+  overlay.style.cssText = 'position:fixed;inset:0;z-index:999;pointer-events:none;mix-blend-mode:overlay;transition:opacity .5s';
+  document.body.appendChild(overlay);
+
+  const colors = ['#ff004488','#00f0ff88','#ffb80088','#00ff8888','#aa44ff88','#ff444488'];
+  let di = 0;
+  const discoId = setInterval(() => {
+    overlay.style.background = colors[di % colors.length];
+    di++;
+  }, 150);
+
+  // Strobe the scroll progress bar too
+  const prog = document.getElementById('scroll-progress');
+  if (prog) prog.style.height = '4px';
+
+  setTimeout(() => {
+    clearInterval(discoId);
+    overlay.style.opacity = '0';
+    if (prog) prog.style.height = '';
+    setTimeout(() => overlay.remove(), 500);
+  }, 5000);
 }
 
 function resetTheme() {
