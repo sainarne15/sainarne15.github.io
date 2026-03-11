@@ -89,10 +89,9 @@ const actions = [
   { l: 'GitHub', d: 'sainarne15', u: 'https://github.com/sainarne15' },
   { l: 'LinkedIn', d: 'sainarne15', u: 'https://www.linkedin.com/in/sainarne15/' },
   { l: 'Autonomy', d: 'Flagship project', u: 'https://github.com/sainarne15/Autonomy' },
-  { l: 'GCP Data Engineer Cert', d: 'Google Cloud Professional', s: '#skills' },
   { l: 'Azure Cert', d: 'AZ-900 Credly', u: 'https://www.credly.com/badges/e8250dd8-4cc4-42b9-9451-d4c745042ac2/public_url' },
   { l: 'Terraform Cert', d: 'HashiCorp Credly', u: 'https://www.credly.com/badges/2d62f778-fa89-4026-a79b-e935c9426c2e/public_url' },
-  { l: 'AWS Cert', d: 'Cloud Practitioner', u: 'https://www.credly.com/badges/510e837c-4f62-4c90-920c-8642f38e2be3/public_url' },
+  { l: 'GCP Data Engineer Cert', d: 'Google Cloud Professional', s: '#skills' },
 ];
 
 let cmdIdx = 0, cmdFiltered = [...actions];
@@ -474,12 +473,10 @@ function startTerminal() {
     skills: () => [
       { t: 'amber', v: '> ls ~/skills/' },
       { t: 'output', v: '' },
-      { t: 'success', v: '  Languages   Python, Java, C#, Scala, SQL, Bash' },
-      { t: 'success', v: '  Big Data    Spark, Kafka, Airflow, Hadoop, Beam' },
-      { t: 'success', v: '  Cloud       GCP, Azure, AWS, Terraform, Docker, K8s' },
-      { t: 'success', v: '  AI/ML       LangGraph, TensorFlow, PyTorch, Vertex AI' },
-      { t: 'success', v: '  Databases   BigQuery, Teradata, Oracle, PostgreSQL' },
-      { t: 'success', v: '  Viz         Tableau, Looker, Qlik' },
+      { t: 'success', v: '  Languages   Python, Java, C#, C++, SQL, JS, Bash' },
+      { t: 'success', v: '  Cloud       GCP, Azure, BigQuery, Airflow, Terraform' },
+      { t: 'success', v: '  AI/ML       LangGraph, LiteLLM, TensorFlow, NLP' },
+      { t: 'success', v: '  Databases   BigQuery, PostgreSQL, Oracle, Teradata' },
     ],
     experience: () => [
       { t: 'amber', v: '> git log --oneline career' },
@@ -513,10 +510,9 @@ function startTerminal() {
     certs: () => [
       { t: 'amber', v: '> cat ~/certifications.json' },
       { t: 'output', v: '' },
-      { t: 'success', v: '  [1] GCP Professional Data Engineer (Google Cloud)' },
-      { t: 'success', v: '  [2] Azure Fundamentals (AZ-900)' },
-      { t: 'success', v: '  [3] Terraform Associate 003 (HashiCorp)' },
-      { t: 'success', v: '  [4] AWS Cloud Practitioner' },
+      { t: 'success', v: '  [1] Azure Fundamentals (AZ-900)' },
+      { t: 'success', v: '  [2] Terraform Associate 003 (HashiCorp)' },
+      { t: 'success', v: '  [3] GCP Professional Data Engineer (Google Cloud)' },
     ],
     autonomy: () => [
       { t: 'amber', v: '> autonomy --info' },
