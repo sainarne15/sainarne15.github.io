@@ -510,6 +510,25 @@ ul { list-style: none; }
 }
 .tl-list strong { color: var(--text); font-weight: 600; }
 
+/* Client sub-sections within a single employer */
+.tl-client {
+  display: flex; justify-content: space-between; align-items: center;
+  margin: 1rem 0 .5rem; padding: .4rem .6rem;
+  background: rgba(var(--cyan-rgb), 0.04); border-left: 2px solid var(--cyan);
+  border-radius: 0 6px 6px 0; gap: .5rem;
+}
+.tl-client-label {
+  font-family: var(--display); font-size: .8rem; font-weight: 600;
+  color: var(--amber); letter-spacing: .01em;
+}
+.tl-client-date {
+  font-family: var(--mono); font-size: .55rem; color: var(--text3);
+  white-space: nowrap; padding: .1rem .4rem;
+  background: rgba(var(--cyan-rgb), 0.04); border-radius: 100px;
+  border: 1px solid var(--border);
+}
+.tl-card .tl-list + .tl-client { margin-top: 1.25rem; }
+
 /* Education */
 .edu-row { display: grid; grid-template-columns: 1fr 1fr; gap: .75rem; margin-top: 2.5rem; }
 .edu-card {
