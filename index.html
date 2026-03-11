@@ -1,2 +1,472 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/><title>Narne's Portfolio</title><script defer="defer" src="/static/js/main.213f677a.js"></script><link href="/static/css/main.0545f398.css" rel="stylesheet"></head><body><!-- testing again-->
-<div id="root"></div></body></html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sai Narne — Software Engineer</title>
+  <meta name="description" content="Software Engineer. Multi-agent AI systems, cloud infrastructure, machine learning." />
+  <meta name="theme-color" content="#030614" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;700&family=Space+Grotesk:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- Full-page neural canvas -->
+  <canvas id="neural-bg" aria-hidden="true"></canvas>
+  <div class="noise"></div>
+  <div class="grid-overlay" aria-hidden="true"></div>
+
+  <!-- Scroll progress -->
+  <div class="scroll-progress" id="scroll-progress"></div>
+
+  <!-- Cursor -->
+  <div class="cursor" id="cursor"></div>
+  <div class="cursor-ring" id="cursor-ring"></div>
+
+  <!-- Nav -->
+  <nav class="nav" id="nav">
+    <a href="#" class="nav-logo">
+      <span class="logo-bracket">[</span>SN<span class="logo-bracket">]</span>
+    </a>
+    <div class="nav-links" id="nav-links">
+      <a href="#about" class="nav-link"><span class="nav-dot"></span>About</a>
+      <a href="#experience" class="nav-link"><span class="nav-dot"></span>Experience</a>
+      <a href="#projects" class="nav-link"><span class="nav-dot"></span>Projects</a>
+      <a href="#skills" class="nav-link"><span class="nav-dot"></span>Skills</a>
+      <a href="#contact" class="nav-link"><span class="nav-dot"></span>Contact</a>
+    </div>
+    <div class="nav-right">
+      <button class="nav-cmd" id="cmd-trigger" aria-label="Command palette">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+        <kbd>Ctrl K</kbd>
+      </button>
+      <button class="hamburger" id="hamburger" aria-label="Menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Mobile menu -->
+  <div class="mobile-menu" id="mobile-menu">
+    <a href="#about" class="mm-link">About</a>
+    <a href="#experience" class="mm-link">Experience</a>
+    <a href="#projects" class="mm-link">Projects</a>
+    <a href="#skills" class="mm-link">Skills</a>
+    <a href="#contact" class="mm-link">Contact</a>
+    <div class="mm-divider"></div>
+    <a href="mailto:nlnarasimhasai15@gmail.com" class="mm-link mm-sub">Email</a>
+    <a href="https://github.com/sainarne15" target="_blank" rel="noopener" class="mm-link mm-sub">GitHub</a>
+    <a href="https://www.linkedin.com/in/sainarne15/" target="_blank" rel="noopener" class="mm-link mm-sub">LinkedIn</a>
+  </div>
+
+  <!-- Command Palette -->
+  <div class="cmd-overlay" id="cmd-overlay">
+    <div class="cmd-palette" role="dialog" aria-label="Command palette">
+      <div class="cmd-top">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+        <input type="text" class="cmd-input" id="cmd-input" placeholder="Search commands..." autocomplete="off" spellcheck="false" />
+        <kbd>ESC</kbd>
+      </div>
+      <div class="cmd-results" id="cmd-results"></div>
+      <div class="cmd-foot"><span><kbd>&uarr;&darr;</kbd> Navigate</span><span><kbd>&crarr;</kbd> Open</span></div>
+    </div>
+  </div>
+
+  <!-- ===== HERO ===== -->
+  <section class="hero" id="hero">
+    <div class="hero-inner">
+      <div class="hero-content">
+        <div class="hero-signal reveal">
+          <span class="signal-dot"></span>
+          <span class="signal-line"></span>
+          <span>SIGNAL ACTIVE</span>
+        </div>
+        <h1 class="hero-title">
+          <span class="hero-line reveal"><span class="hero-hi">Hi, I'm</span></span>
+          <span class="hero-line reveal" style="--d:.06s"><span class="hero-name" id="hero-name">Sai Narne</span></span>
+          <span class="hero-line reveal" style="--d:.12s">
+            <span class="hero-sub-line">I build <span class="hero-rotate" id="hero-rotate">intelligent systems</span></span>
+          </span>
+        </h1>
+        <p class="hero-desc reveal" style="--d:.2s">
+           specializing in multi-agent AI pipelines, cloud infrastructure,
+          and machine learning.
+        </p>
+        <div class="hero-actions reveal" style="--d:.28s">
+          <a href="#projects" class="btn btn-primary magnetic"><span class="btn-inner">View Projects <span class="btn-arrow">&rarr;</span></span></a>
+          <a href="#contact" class="btn btn-outline magnetic"><span class="btn-inner">Contact</span></a>
+        </div>
+        <div class="hero-stats reveal" style="--d:.36s">
+          <div class="hero-stat">
+            <span class="hs-num" data-target="9">0</span>
+            <span class="hs-label">AI Agents Built</span>
+          </div>
+          <div class="hero-stat-sep"></div>
+          <div class="hero-stat">
+            <span class="hs-num" data-target="3">0</span>
+            <span class="hs-label">Cloud Certs</span>
+          </div>
+          <div class="hero-stat-sep"></div>
+          <div class="hero-stat">
+            <span class="hs-num" data-target="89">0</span>
+            <span class="hs-label">% ML Accuracy</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Hero Visual — right side -->
+      <div class="hero-visual" id="hero-visual">
+        <div class="term-window">
+          <div class="term-bar">
+            <span class="term-dot term-dot--red"></span>
+            <span class="term-dot term-dot--yellow"></span>
+            <span class="term-dot term-dot--green"></span>
+            <span class="term-title">sai@portfolio — bash</span>
+          </div>
+          <div class="term-body" id="term-body">
+            <div class="term-line"><span class="term-prompt">$</span> <span class="term-cmd">autonomy init --agents 9</span></div>
+          </div>
+          <div class="term-input-row" id="term-input-row" style="display:none">
+            <span class="term-prompt">$</span>
+            <input type="text" class="term-input" id="term-input" spellcheck="false" autocomplete="off" placeholder="type 'help' for commands..." />
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="hero-scroll" aria-hidden="true">
+      <div class="scroll-pulse"></div>
+      <span>SCROLL</span>
+    </div>
+  </section>
+
+  <!-- ===== ABOUT ===== -->
+  <section class="section" id="about">
+    <div class="container">
+      <div class="sec-head reveal">
+        <div class="sec-indicator"><span class="sec-pulse"></span></div>
+        <span class="sec-num">01</span>
+        <h2 class="sec-title">About</h2>
+        <div class="sec-line"></div>
+      </div>
+      <div class="about-grid">
+        <div class="about-text">
+          <p class="about-lead reveal">
+            I engineer systems at the intersection of
+            <span class="hl">AI</span>,
+            <span class="hl">cloud</span>, and
+            <span class="hl">full-stack development</span>.
+          </p>
+          <p class="reveal" style="--d:.05s">
+            My latest project, Autonomy, is a 9-agent AI system that turns a single English sentence
+            into a fully built, tested, and deployed application — with self-correction and memory.
+            Before that, I built microservices at Cognizant, trained ML models that hit 89% accuracy
+            at UH, and earned certifications in Azure, AWS, and Terraform.
+          </p>
+          <p class="reveal" style="--d:.1s">
+            I believe the best software is built by systems that think in layers — and I build those layers.
+          </p>
+        </div>
+        <div class="about-cards">
+          <div class="data-card reveal" style="--d:0s">
+            <div class="dc-header"><span class="dc-dot"></span>ORGANIZATIONS</div>
+            <span class="dc-value" data-target="3">0</span>
+          </div>
+          <div class="data-card reveal" style="--d:.06s">
+            <div class="dc-header"><span class="dc-dot"></span>PROJECTS</div>
+            <span class="dc-value" data-target="10">0</span><span class="dc-plus">+</span>
+          </div>
+          <div class="data-card reveal" style="--d:.12s">
+            <div class="dc-header"><span class="dc-dot"></span>CERTIFICATIONS</div>
+            <span class="dc-value" data-target="3">0</span>
+          </div>
+          <div class="data-card reveal" style="--d:.18s">
+            <div class="dc-header"><span class="dc-dot"></span>ML ACCURACY</div>
+            <span class="dc-value" data-target="89">0</span><span class="dc-plus">%</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== EXPERIENCE ===== -->
+  <section class="section" id="experience">
+    <div class="container">
+      <div class="sec-head reveal">
+        <div class="sec-indicator"><span class="sec-pulse"></span></div>
+        <span class="sec-num">02</span>
+        <h2 class="sec-title">Experience</h2>
+        <div class="sec-line"></div>
+      </div>
+
+      <div class="timeline">
+        <div class="tl-item reveal">
+          <div class="tl-node"><span class="tl-pulse"></span></div>
+          <div class="tl-card">
+            <div class="tl-top">
+              <div><h3 class="tl-role">Teaching Assistant</h3><span class="tl-org">University of Houston</span></div>
+              <span class="tl-date">Jan 2023 — May 2023</span>
+            </div>
+            <ul class="tl-list">
+              <li>Instructed 2 graduate courses with 40 students</li>
+              <li>Delivered 2 guest lectures on ML in supply chain</li>
+              <li>Achieved <strong>25% improvement</strong> in student outcomes</li>
+            </ul>
+          </div>
+        </div>
+        <div class="tl-item reveal" style="--d:.06s">
+          <div class="tl-node"><span class="tl-pulse"></span></div>
+          <div class="tl-card">
+            <div class="tl-top">
+              <div><h3 class="tl-role">Research Assistant</h3><span class="tl-org">University of Houston</span></div>
+              <span class="tl-date">Sep 2022 — May 2023</span>
+            </div>
+            <ul class="tl-list">
+              <li>Investigated socio-demographic factors with 3 professors</li>
+              <li>Built Logistic Regression, SVM, Random Forest, Gradient Boosting, Neural Networks</li>
+              <li>Achieved <strong>89% accuracy</strong> after tuning (10% improvement)</li>
+              <li>Drafted research paper for publication</li>
+            </ul>
+          </div>
+        </div>
+        <div class="tl-item reveal" style="--d:.12s">
+          <div class="tl-node"><span class="tl-pulse"></span></div>
+          <div class="tl-card">
+            <div class="tl-top">
+              <div><h3 class="tl-role">Programmer Analyst Trainee</h3><span class="tl-org">Cognizant</span></div>
+              <span class="tl-date">Feb 2021 — Jun 2021</span>
+            </div>
+            <ul class="tl-list">
+              <li>Built microservices with ASP.NET Core & Entity Framework</li>
+              <li>Reduced query execution time by <strong>30%</strong></li>
+              <li>Deployed 4 web APIs with Azure Logic Apps + CI/CD</li>
+              <li>Reduced bug discovery time by <strong>40%</strong> with NUnit + Moq</li>
+            </ul>
+          </div>
+        </div>
+        <div class="tl-item reveal" style="--d:.18s">
+          <div class="tl-node"><span class="tl-pulse"></span></div>
+          <div class="tl-card">
+            <div class="tl-top">
+              <div><h3 class="tl-role">ML Intern</h3><span class="tl-org">Cognibot</span></div>
+              <span class="tl-date">Apr 2020 — May 2020</span>
+            </div>
+            <ul class="tl-list">
+              <li>Researched ML, AI, and IoT domains</li>
+              <li>Built stock price prediction with Neural Networks</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="edu-row">
+        <div class="edu-card reveal">
+          <div class="edu-signal"><span class="sec-pulse"></span></div>
+          <h4>M.S. Computer Science</h4>
+          <p>University of Houston <span class="edu-badge">50% Scholarship</span></p>
+          <span class="tl-date">Jan 2022 — May 2023</span>
+        </div>
+        <div class="edu-card reveal" style="--d:.06s">
+          <div class="edu-signal"><span class="sec-pulse"></span></div>
+          <h4>B.Tech CS & Engineering</h4>
+          <p>RVR & JC College of Engineering <span class="edu-badge">100% Scholarship</span></p>
+          <span class="tl-date">Aug 2017 — Jul 2021</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== PROJECTS ===== -->
+  <section class="section" id="projects">
+    <div class="container">
+      <div class="sec-head reveal">
+        <div class="sec-indicator"><span class="sec-pulse"></span></div>
+        <span class="sec-num">03</span>
+        <h2 class="sec-title">Projects</h2>
+        <div class="sec-line"></div>
+      </div>
+
+      <!-- Autonomy — Hero Project -->
+      <div class="project-hero reveal">
+        <div class="ph-badge"><span class="sec-pulse"></span> FLAGSHIP PROJECT</div>
+        <h3 class="ph-title">Autonomy</h3>
+        <p class="ph-subtitle">Self-Improving Multi-Agent Software Development System</p>
+        <p class="ph-desc">
+          9 specialized AI agents collaborate to turn a single English sentence into a fully built,
+          tested, reviewed, and deployed full-stack application — and get better with every task.
+        </p>
+        <div class="ph-agents">
+          <div class="agent-node" style="--i:0"><span>Orchestrator</span></div>
+          <div class="agent-node" style="--i:1"><span>Planner</span></div>
+          <div class="agent-node" style="--i:2"><span>Backend</span></div>
+          <div class="agent-node" style="--i:3"><span>Frontend</span></div>
+          <div class="agent-node" style="--i:4"><span>Database</span></div>
+          <div class="agent-node" style="--i:5"><span>QA</span></div>
+          <div class="agent-node" style="--i:6"><span>Reviewer</span></div>
+          <div class="agent-node" style="--i:7"><span>Git</span></div>
+          <div class="agent-node" style="--i:8"><span>DevOps</span></div>
+        </div>
+        <div class="ph-tech">
+          <span>Python</span><span>LangGraph</span><span>React</span><span>TypeScript</span><span>LiteLLM</span><span>E2B</span><span>Firestore</span><span>GCP</span>
+        </div>
+        <a href="https://github.com/sainarne15/Autonomy" target="_blank" rel="noopener" class="ph-link">
+          View on GitHub <span class="btn-arrow">&rarr;</span>
+        </a>
+      </div>
+
+      <!-- Other projects -->
+      <div class="projects-grid">
+        <a href="https://github.com/sainarne15/Return_Order_Management" target="_blank" rel="noopener" class="proj-card reveal">
+          <div class="pc-head"><span class="pc-dot"></span><span class="pc-label">ENTERPRISE</span></div>
+          <h3>Return Order Management</h3>
+          <p>4 microservices (Auth, Processing, Payment, Delivery) built with ASP.NET Core at Cognizant.</p>
+          <div class="pc-tech"><span>ASP.NET Core</span><span>C#</span><span>Microservices</span><span>JWT</span></div>
+        </a>
+        <a href="https://github.com/sainarne15/CustomerFeedbackAnalysis" target="_blank" rel="noopener" class="proj-card reveal" style="--d:.04s">
+          <div class="pc-head"><span class="pc-dot"></span><span class="pc-label">DEEP LEARNING</span></div>
+          <h3>Customer Feedback Analysis</h3>
+          <p>LSTM & CNN-LSTM sentiment analysis on Amazon reviews with a deployed Streamlit app.</p>
+          <div class="pc-tech"><span>NLP</span><span>LSTM</span><span>Streamlit</span></div>
+        </a>
+        <a href="https://github.com/sainarne15/ImageTransormationsAndEnhancements_PyQt" target="_blank" rel="noopener" class="proj-card reveal" style="--d:.08s">
+          <div class="pc-head"><span class="pc-dot"></span><span class="pc-label">COMPUTER VISION</span></div>
+          <h3>Image Processing Toolkit</h3>
+          <p>15+ algorithms from scratch — FFT, histogram equalization, filters — with a PyQt5 GUI.</p>
+          <div class="pc-tech"><span>Python</span><span>PyQt5</span><span>OpenCV</span></div>
+        </a>
+        <a href="https://rolefitresume.streamlit.app" target="_blank" rel="noopener" class="proj-card reveal" style="--d:.12s">
+          <div class="pc-head"><span class="pc-dot live"></span><span class="pc-label">LIVE</span></div>
+          <h3>RoleFit Resume Analyzer</h3>
+          <p>AI-powered resume-to-job-role fit evaluator. Live at rolefitresume.streamlit.app.</p>
+          <div class="pc-tech"><span>GenAI</span><span>Streamlit</span><span>Python</span></div>
+        </a>
+        <a href="https://github.com/sainarne15/cricbuzz-api-de-analytics" target="_blank" rel="noopener" class="proj-card reveal" style="--d:.16s">
+          <div class="pc-head"><span class="pc-dot"></span><span class="pc-label">DATA ENGINEERING</span></div>
+          <h3>Cricbuzz Data Pipeline</h3>
+          <p>End-to-end: API extraction, GCS, BigQuery transforms, Airflow orchestration, Looker dashboards.</p>
+          <div class="pc-tech"><span>GCP</span><span>BigQuery</span><span>Airflow</span></div>
+        </a>
+        <a href="https://github.com/sainarne15/FuelQuoteFinal" target="_blank" rel="noopener" class="proj-card reveal" style="--d:.2s">
+          <div class="pc-head"><span class="pc-dot"></span><span class="pc-label">FULL STACK</span></div>
+          <h3>Fuel Rate Prediction</h3>
+          <p>ASP.NET Core with EF, layered architecture, unit tests (NUnit + Moq), code coverage reports.</p>
+          <div class="pc-tech"><span>ASP.NET Core</span><span>C#</span><span>NUnit</span></div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== SKILLS ===== -->
+  <section class="section" id="skills">
+    <div class="container">
+      <div class="sec-head reveal">
+        <div class="sec-indicator"><span class="sec-pulse"></span></div>
+        <span class="sec-num">04</span>
+        <h2 class="sec-title">Skills & Certs</h2>
+        <div class="sec-line"></div>
+      </div>
+
+      <div class="skills-grid">
+        <div class="skill-group reveal">
+          <h3 class="sg-title"><span class="sg-icon">&lt;/&gt;</span> Languages</h3>
+          <div class="sg-tags">
+            <span class="sg-tag">Python</span><span class="sg-tag">Java</span><span class="sg-tag">C#</span>
+            <span class="sg-tag">C++</span><span class="sg-tag">JavaScript</span><span class="sg-tag">R</span>
+          </div>
+        </div>
+        <div class="skill-group reveal" style="--d:.04s">
+          <h3 class="sg-title"><span class="sg-icon">&square;</span> Web</h3>
+          <div class="sg-tags">
+            <span class="sg-tag">React</span><span class="sg-tag">TypeScript</span><span class="sg-tag">HTML/CSS</span>
+            <span class="sg-tag">ASP.NET Core</span><span class="sg-tag">FastAPI</span>
+          </div>
+        </div>
+        <div class="skill-group reveal" style="--d:.08s">
+          <h3 class="sg-title"><span class="sg-icon">&uarr;</span> Cloud & DevOps</h3>
+          <div class="sg-tags">
+            <span class="sg-tag">AWS</span><span class="sg-tag">Azure</span><span class="sg-tag">GCP</span>
+            <span class="sg-tag">Terraform</span><span class="sg-tag">Docker</span><span class="sg-tag">Jenkins</span>
+          </div>
+        </div>
+        <div class="skill-group reveal" style="--d:.12s">
+          <h3 class="sg-title"><span class="sg-icon">&oplus;</span> AI & Data</h3>
+          <div class="sg-tags">
+            <span class="sg-tag">LangGraph</span><span class="sg-tag">LiteLLM</span><span class="sg-tag">NLP</span>
+            <span class="sg-tag">Neural Networks</span><span class="sg-tag">BigQuery</span><span class="sg-tag">SQL</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="certs-grid">
+        <a href="https://www.credly.com/badges/e8250dd8-4cc4-42b9-9451-d4c745042ac2/public_url" target="_blank" rel="noopener" class="cert-card reveal">
+          <span class="cert-dot"></span>
+          <div><h4>Azure Fundamentals</h4><p>AZ-900</p></div>
+        </a>
+        <a href="https://www.credly.com/badges/2d62f778-fa89-4026-a79b-e935c9426c2e/public_url" target="_blank" rel="noopener" class="cert-card reveal" style="--d:.04s">
+          <span class="cert-dot"></span>
+          <div><h4>Terraform Associate</h4><p>HashiCorp</p></div>
+        </a>
+        <a href="https://www.credly.com/badges/510e837c-4f62-4c90-920c-8642f38e2be3/public_url" target="_blank" rel="noopener" class="cert-card reveal" style="--d:.08s">
+          <span class="cert-dot"></span>
+          <div><h4>AWS Certified</h4><p>Cloud Practitioner</p></div>
+        </a>
+      </div>
+
+      <div class="marquee reveal">
+        <div class="marquee-inner">
+          <span>CBSE Merit Certificate</span><span class="mq-dot"></span>
+          <span>Appreciation from Education Minister of India</span><span class="mq-dot"></span>
+          <span>100% Tuition Scholarship (B.Tech)</span><span class="mq-dot"></span>
+          <span>50% Tuition Scholarship (M.S.)</span><span class="mq-dot"></span>
+          <span>Topped Board Examinations</span><span class="mq-dot"></span>
+          <span>CBSE Merit Certificate</span><span class="mq-dot"></span>
+          <span>Appreciation from Education Minister of India</span><span class="mq-dot"></span>
+          <span>100% Tuition Scholarship (B.Tech)</span><span class="mq-dot"></span>
+          <span>50% Tuition Scholarship (M.S.)</span><span class="mq-dot"></span>
+          <span>Topped Board Examinations</span><span class="mq-dot"></span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CONTACT ===== -->
+  <section class="section contact" id="contact">
+    <div class="container">
+      <div class="sec-head reveal" style="justify-content:center">
+        <div class="sec-indicator"><span class="sec-pulse"></span></div>
+        <span class="sec-num">05</span>
+        <h2 class="sec-title">Contact</h2>
+      </div>
+      <p class="contact-text reveal">
+        Open to new opportunities. Let's build something together.
+      </p>
+      <div class="contact-grid reveal" style="--d:.06s">
+        <a href="mailto:nlnarasimhasai15@gmail.com" class="contact-card">
+          <span class="cc-icon">@</span>
+          <span>nlnarasimhasai15@gmail.com</span>
+        </a>
+        <a href="https://www.linkedin.com/in/sainarne15/" target="_blank" rel="noopener" class="contact-card">
+          <span class="cc-icon">in</span>
+          <span>LinkedIn</span>
+        </a>
+        <a href="https://github.com/sainarne15" target="_blank" rel="noopener" class="contact-card">
+          <span class="cc-icon">&lt;&gt;</span>
+          <span>GitHub</span>
+        </a>
+      </div>
+      <a href="mailto:nlnarasimhasai15@gmail.com" class="btn btn-primary btn-lg magnetic reveal" style="--d:.12s">
+        <span class="btn-inner">Send Signal <span class="btn-arrow">&rarr;</span></span>
+      </a>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container footer-row">
+      <p>Designed & Built by Sai Narne</p>
+      <p class="footer-zero">Zero dependencies. Pure HTML, CSS & JS.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
